@@ -19,5 +19,15 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400&family=Fira+Code:wght@400&family=Quicksand:wght@400&display=swap"
     />
+
+    <script>
+      if ('%MODE%' === 'production') {
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js');
+          });
+        }
+      }
+    </script>
   </body>
 </html>
