@@ -1,15 +1,17 @@
+import Login from '../auth/Login';
+import Signup from '../auth/Signup';
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Route, Switch } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import { reset } from 'styled-reset';
-import AuthPage from '../auth-page/AuthPage';
 import AuthGuard from '../AuthGuard';
 
 interface AppProps {}
 
 const GlobalStyle = createGlobalStyle`
-   ${reset}
+  ${reset}
+  
   body {
     margin: 0;
     font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -25,8 +27,8 @@ function App({}: AppProps) {
     <main>
       <HelmetProvider>
         <Switch>
-          <Route path="/login" render={() => <AuthPage authType="login" />} />
-          <Route path="/signup" render={() => <AuthPage authType="signup" />} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
         </Switch>
 
         <AuthGuard />
