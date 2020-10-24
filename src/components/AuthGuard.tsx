@@ -3,16 +3,13 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useHistory, useLocation } from 'react-router-dom';
 import { firebaseInstance } from '../helpers/firebase';
 
-interface IProps {
-  // children: ReactNode;
-}
-
-const AuthGuard = ({}: IProps) => {
+const AuthGuard = () => {
   const [user] = useAuthState(firebaseInstance.auth());
   const { pathname } = useLocation();
   const history = useHistory();
 
   useEffect(() => {
+    console.log(pathname);
     const isAuthPage = ['/login', '/signup'].includes(pathname);
 
     if (user && isAuthPage) {
