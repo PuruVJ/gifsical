@@ -6,6 +6,9 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
   },
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {
     "firebase": "^7.24.0",
     "react": "^16.13.1",
