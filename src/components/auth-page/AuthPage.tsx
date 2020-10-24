@@ -1,11 +1,18 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+import { capitalize } from '../../helpers/utils';
 
 interface IAuthPageProps {
-  authType: 'login' | 'signup'; 
-} 
+  authType: 'login' | 'signup';
+}
 
 export default function AuthPage({ authType }: IAuthPageProps) {
-  // @ts-ignore
-
-  return <div>{authType}</div>;
+  return (
+    <div>
+      {authType}
+      <Helmet>
+        <title>{capitalize(authType)} | Gifsical</title>
+      </Helmet>
+    </div>
+  );
 }
