@@ -36,7 +36,6 @@
     "@types/chai": "^4.2.13",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
-    "@types/react-helmet": "^6.1.0",
     "@types/react-helmet-async": "^1.0.3",
     "@types/react-router-dom": "^5.1.6",
     "@types/snowpack-env": "^2.3.0",
@@ -45,6 +44,7 @@
     "chai": "^4.2.0",
     "prettier": "^2.0.5",
     "snowpack": "^2.12.1",
-    "typescript": "^4.0.0"
+    "typescript": "^4.0.3",
+    "workbox-cli": "^5.1.4"
   }
 }
