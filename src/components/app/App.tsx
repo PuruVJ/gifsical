@@ -2,7 +2,7 @@ import Login from '../auth/Login';
 import Signup from '../auth/Signup';
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
-import { Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import { reset } from 'styled-reset';
 import AuthGuard from '../AuthGuard';
@@ -34,6 +34,9 @@ function App({}: AppProps) {
         <AuthGuard />
 
         <GlobalStyle />
+
+        <Link to="/login">Login</Link>
+        <Link to="/signup">Signup</Link>
       </HelmetProvider>
     </main>
   );
