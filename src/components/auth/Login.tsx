@@ -1,12 +1,89 @@
-import React from 'react';
-import { Button } from '@material-ui/core';
+import { Button, makeStyles, Typography } from '@material-ui/core';
+import React, { useState } from 'react';
+import LoginIllustrationSVG from '../../assets/art/login.svg';
+import { AuthArea, AuthPage, AuthTextField } from './auth-shared-styles';
+import { PasswordInput } from './password-input';
 
 export default function Login({}) {
+  const classes = useClasses();
+
+  // States
+  const [error, setError] = useState({
+    email: '',
+    password: '',
+  });
+
+  function toggleError() {
+    setError(({ email, password }) => ({
+      email: email ? '' : 'Invalid email',
+      password: password ? '' : 'Invalid email',
+    }));
+  }
+
   return (
-    <div>
-      <Button variant="contained" color="primary">
-        Login
-      </Button>
-    </div>
+    <AuthPage>
+      <AuthArea>
+        <Typography color="secondary" variant="h2">
+          Login
+        </Typography>
+        <br />
+        <img className={classes.img} src={LoginIllustrationSVG} />
+        <form className={classes.form}>
+          <AuthTextField
+            label="E-mail address"
+            name="email"
+            type="email"
+            required
+            error={!!error.email}
+            helperText={error.email && 'Hello world'}
+          />
+
+          <PasswordInput
+            color="secondary"
+            variant="filled"
+            label="Password"
+            name="password"
+            className={classes.passwordInput}
+            required
+          />
+
+          <Button
+            onClick={(e) => {
+              e.preventDefault();
+              toggleError();
+            }}
+            type="submit"
+            color="secondary"
+            variant="contained"
+          >
+            Submit
+          </Button>
+        </form>
+      </AuthArea>
+    </AuthPage>
   );
 }
+
+/**
+ * General styles
+ */
+const useClasses = makeStyles(({ spacing, palette }) => ({
+  form: {
+    width: '100%',
+
+    display: 'flex',
+    flexDirection: 'column',
+    gap: spacing(0.5),
+  },
+
+  img: {
+    maxWidth: '100%',
+  },
+
+  passwordInput: {
+    '& svg': {
+      fill: palette.text.primary,
+      color: palette.text.primary
+    }
+  }
+}));
