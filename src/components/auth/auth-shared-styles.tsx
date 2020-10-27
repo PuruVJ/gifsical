@@ -11,6 +11,7 @@ import {
   TextFieldProps,
 } from '@material-ui/core';
 import React from 'react';
+import AuthBackgroundSVG from '../../assets/backgrounds/auth.svg';
 
 /**
  * Backdrop for login screen
@@ -20,6 +21,12 @@ export const AuthPage = styled('section')(({ theme }) => ({
   width: '100%',
 
   backgroundColor: theme.palette.primary.main,
+  backgroundRepeat: 'none',
+  backgroundSize: 'cover',
+
+  [theme.breakpoints.up('md')]: {
+    // backgroundImage: `url(${AuthBackgroundSVG})`,
+  },
 
   display: 'flex',
   justifyContent: 'center',
@@ -47,3 +54,14 @@ export const AuthTextField = styled((props: TextFieldProps) => (
 ))(({ theme }) => ({
   margin: theme.spacing(0.5, 0),
 }));
+
+// export const AuthBackgroundImg = styled('div')({
+//   zIndex: -1,
+//   position: 'fixed',
+//   top: 0,
+//   left: 0,
+
+//   height: '100%',
+//   width: '100%',
+
+// });
