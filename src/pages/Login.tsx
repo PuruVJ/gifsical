@@ -12,10 +12,15 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import LoginIllustrationSVG from '../assets/art/login.svg';
-import { AuthArea, AuthPage, AuthTextField } from '../components/auth/auth-shared-styles';
+import {
+  AuthArea,
+  AuthPage,
+  AuthTextField,
+  GlobalAuthStyles,
+} from '../components/auth/auth-shared-styles';
 import { PasswordInput } from '../components/password-input';
 import { firebaseInstance } from '../helpers/firebase';
-import { emailRegex, waitFor } from '../helpers/utils';
+import { emailRegex } from '../helpers/utils';
 
 type TLoginError =
   | 'user-not-found'
@@ -147,6 +152,9 @@ export default function Login({}) {
       <Helmet>
         <title>Login | Gifsical</title>
       </Helmet>
+
+      {/* Global styles when auth page is here */}
+      <GlobalAuthStyles />
     </>
   );
 }

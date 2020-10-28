@@ -4,29 +4,19 @@
  * @author Puru Vijay
  */
 
-import {
-  FormControl,
-  styled,
-  TextField,
-  TextFieldProps,
-} from '@material-ui/core';
+import { FormControl, styled, TextField, TextFieldProps, withStyles } from '@material-ui/core';
 import React from 'react';
-import AuthBackgroundSVG from '../../assets/backgrounds/auth.svg';
 
 /**
  * Backdrop for login screen
  */
 export const AuthPage = styled('section')(({ theme }) => ({
-  height: '100%',
+  minHeight: '100%',
   width: '100%',
 
   backgroundColor: theme.palette.primary.main,
   backgroundRepeat: 'none',
   backgroundSize: 'cover',
-
-  [theme.breakpoints.up('md')]: {
-    // backgroundImage: `url(${AuthBackgroundSVG})`,
-  },
 
   display: 'flex',
   justifyContent: 'center',
@@ -54,3 +44,11 @@ export const AuthTextField = styled((props: TextFieldProps) => (
 ))(({ theme }) => ({
   margin: theme.spacing(0.5, 0),
 }));
+
+export const GlobalAuthStyles = withStyles((theme) => ({
+  '@global': {
+    body: {
+      backgroundColor: theme.palette.primary.main,
+    },
+  },
+}))(() => null);
