@@ -54,14 +54,3 @@ export const AuthTextField = styled((props: TextFieldProps) => (
 ))(({ theme }) => ({
   margin: theme.spacing(0.5, 0),
 }));
-
-// export const AuthBackgroundImg = styled('div')({
-//   zIndex: -1,
-//   position: 'fixed',
-//   top: 0,
-//   left: 0,
-
-//   height: '100%',
-//   width: '100%',
-
-// });

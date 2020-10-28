@@ -4,11 +4,13 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { firebaseInstance } from '../helpers/firebase';
 
 const AuthGuard = () => {
-  const [user] = useAuthState(firebaseInstance.auth());
+  const [user, loading] = useAuthState(firebaseInstance.auth());
   const { pathname } = useLocation();
   const history = useHistory();
 
   useEffect(() => {
+    if (loading) return;
+
     console.log(pathname);
     const isAuthPage = ['/login', '/signup'].includes(pathname);
 
@@ -20,9 +22,9 @@ const AuthGuard = () => {
     if (!user && !isAuthPage) {
       history.push('/login');
     }
-  }, [user]);
+  }, [user, loading]);
 
-  return <></>;
+  return <span />;
 };
 
 export default AuthGuard;

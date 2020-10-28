@@ -3,9 +3,9 @@ import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Route, Switch } from 'react-router-dom';
 import { theme } from '../../theme';
-import Login from '../auth/Login';
-import Signup from '../auth/Signup';
-import AuthGuard from '../AuthGuard';
+import Login from '../Login';
+import Signup from '../Signup';
+import AuthGuard from '../../components/AuthGuard';
 import './App.scss';
 
 interface AppProps {}

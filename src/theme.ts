@@ -17,9 +17,9 @@ export const theme = createMuiTheme({
       default: '#fafafa',
     },
     primary: {
-      light: '#fb7178',
-      main: '#FA4D56',
-      dark: '#c83e45',
+      light: '#f38a8c',
+      main: '#EE585A',
+      dark: '#a73e3f',
       contrastText: '#ffffff',
     },
     secondary: {
@@ -32,13 +32,12 @@ export const theme = createMuiTheme({
       light: 'rgba(120, 239, 239, 1)',
       main: 'rgba(86, 235, 235, 1)',
       dark: 'rgba(69, 188, 188, 1)',
-      contrastText: '#fff',
+      contrastText: '#141414',
     },
     text: {
       primary: '#141414',
       secondary: 'rgba(0, 0, 0, 0.54)',
       disabled: 'rgba(0, 0, 0, 0.38)',
-      hint: 'rgba(0, 0, 0, 0.38)',
     },
   },
   spacing: (factor) => `${factor * 1}rem`,
@@ -50,15 +49,36 @@ export const theme = createMuiTheme({
     h5: headingsStyles,
     h6: headingsStyles,
   },
-  overrides: {
+  components: {
     MuiButton: {
-      root: {
-        borderRadius: '0.5rem',
+      styleOverrides: {
+        root: {
+          borderRadius: '0.5rem',
+        },
       },
     },
     MuiTextField: {
-      root: {
-        borderRadius: '0.5rem',
+      styleOverrides: {
+        root: {
+          borderRadius: '0.5rem',
+        },
+      },
+    },
+
+    MuiAlert: {
+      styleOverrides: {
+        filledError: {
+          color: '#141414',
+          fill: '#141414',
+        },
+      },
+    },
+
+    MuiBackdrop: {
+      styleOverrides: {
+        root: {
+          zIndex: 1,
+        },
       },
     },
   },
