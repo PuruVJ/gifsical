@@ -43,7 +43,7 @@ export default function Login({}) {
 
   // Login error
   const [loginError, setLoginError] = useState<TLoginError>('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isInProgress, setIsInProgress] = useState(false);
   const [isSnackBarOpen, setIsSnackBarOpen] = useState(false);
 
   // Open snackbar when errors occur
@@ -61,7 +61,7 @@ export default function Login({}) {
     setLoginError('');
 
     // Show loading
-    setIsLoading(true);
+    setIsInProgress(true);
 
     // Initialize firebase auth
     const auth = firebaseInstance.auth();
@@ -78,7 +78,7 @@ export default function Login({}) {
 
       setLoginError(error.code.replace('auth/', '') as TLoginError);
     } finally {
-      setIsLoading(false);
+      setIsInProgress(false);
     }
   }
 
@@ -135,7 +135,7 @@ export default function Login({}) {
       </AuthPage>
 
       {/* For loading */}
-      <Backdrop open={isLoading}>
+      <Backdrop open={isInProgress}>
         <CircularProgress color="secondary" />
       </Backdrop>
 
