@@ -1,10 +1,8 @@
 /**
  * Common styles for auth pages
- * @module
- * @author Puru Vijay
  */
 
-import { FormControl, styled, TextField, TextFieldProps, withStyles } from '@material-ui/core';
+import { FormControl, styled, TextField, TextFieldProps } from '@material-ui/core';
 import React from 'react';
 
 /**
@@ -42,13 +40,5 @@ export const AuthTextField = styled((props: TextFieldProps) => (
     <TextField {...props} color="secondary" variant="filled" />
   </FormControl>
 ))(({ theme }) => ({
-  margin: theme.spacing(0.5, 0),
+  margin: theme.spacing(1, 0, 0, 0),
 }));
-
-export const GlobalAuthStyles = withStyles((theme) => ({
-  '@global': {
-    body: {
-      backgroundColor: theme.palette.primary.main,
-    },
-  },
-}))(() => null);

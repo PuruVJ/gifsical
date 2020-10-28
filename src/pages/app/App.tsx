@@ -2,10 +2,11 @@ import { CssBaseline, styled, ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Route, Switch } from 'react-router-dom';
+import { GlobalAuthStyles } from '../../components/auth/auth-global-styles';
+import AuthGuard from '../../components/AuthGuard';
 import { theme } from '../../theme';
 import Login from '../Login';
 import Signup from '../Signup';
-import AuthGuard from '../../components/AuthGuard';
 import './App.scss';
 
 interface AppProps {}
@@ -14,7 +15,7 @@ const Main = styled('main')({
   display: 'flex',
   justifyContent: 'center',
   width: '100%',
-  height: '100%',
+  minHeight: '100%',
 });
 
 function App({}: AppProps) {
@@ -32,6 +33,7 @@ function App({}: AppProps) {
           <CssBaseline />
         </HelmetProvider>
       </ThemeProvider>
+      <GlobalAuthStyles />
     </Main>
   );
 }

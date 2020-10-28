@@ -3,6 +3,7 @@ import {
   Backdrop,
   Button,
   CircularProgress,
+  Link,
   makeStyles,
   Slide,
   Snackbar,
@@ -11,13 +12,9 @@ import {
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
+import { Link as RouterLink } from 'react-router-dom';
 import LoginIllustrationSVG from '../assets/art/login.svg';
-import {
-  AuthArea,
-  AuthPage,
-  AuthTextField,
-  GlobalAuthStyles,
-} from '../components/auth/auth-shared-styles';
+import { AuthArea, AuthPage, AuthTextField } from '../components/auth/auth-shared-styles';
 import { PasswordInput } from '../components/password-input';
 import { firebaseInstance } from '../helpers/firebase';
 import { emailRegex } from '../helpers/utils';
@@ -128,6 +125,12 @@ export default function Login({}) {
               Submit
             </Button>
           </form>
+          <br />
+          <Typography align="right">
+            <Link color="secondary" to="/forgot-password" component={RouterLink}>
+              Forgot Password
+            </Link>
+          </Typography>
         </AuthArea>
       </AuthPage>
 
@@ -154,7 +157,6 @@ export default function Login({}) {
       </Helmet>
 
       {/* Global styles when auth page is here */}
-      <GlobalAuthStyles />
     </>
   );
 }
@@ -168,7 +170,7 @@ const useClasses = makeStyles(({ spacing, palette }) => ({
 
     display: 'flex',
     flexDirection: 'column',
-    gap: spacing(0.5),
+    gap: spacing(0.6),
   },
 
   img: {

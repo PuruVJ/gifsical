@@ -22,7 +22,6 @@
     "react-helmet-async": "^1.0.7",
     "react-hook-form": "^6.9.6",
     "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.0",
     "styled-reset": "^4.2.3"
   },
   "devDependencies": {

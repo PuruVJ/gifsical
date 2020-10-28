@@ -11,8 +11,7 @@ const AuthGuard = () => {
   useEffect(() => {
     if (loading) return;
 
-    console.log(pathname);
-    const isAuthPage = ['/login', '/signup'].includes(pathname);
+    const isAuthPage = ['/login', '/signup', '/forgot-password'].includes(pathname);
 
     if (user && isAuthPage) {
       // User has no business on auth page.
