@@ -1,11 +1,10 @@
 {
   "scripts": {
-    "start": "snowpack dev",
+    "start": "snowpack dev --port 3333",
     "build": "snowpack build",
     "postbuild": " workbox generateSW workbox-config.js",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
+    "emulators:start": "firebase emulators:start --export-on-exit --import em-data"
   },
   "browserslist": ">0.75%, not ie 11, not UCAndroid >0, not OperaMini all",
   "resolutions": {

@@ -13,8 +13,8 @@ export const theme = createMuiTheme({
       white: '#fff',
     },
     background: {
+      default: '#fff',
       paper: '#fff',
-      default: '#fafafa',
     },
     primary: {
       light: '#f38a8c',
@@ -64,7 +64,6 @@ export const theme = createMuiTheme({
         },
       },
     },
-
     MuiAlert: {
       styleOverrides: {
         filledError: {

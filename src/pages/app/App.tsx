@@ -1,4 +1,4 @@
-import { CssBaseline, styled, ThemeProvider } from '@material-ui/core';
+import { styled, ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Route, Switch } from 'react-router-dom';
@@ -29,11 +29,10 @@ function App({}: AppProps) {
           </Switch>
 
           <AuthGuard />
-
-          <CssBaseline />
         </HelmetProvider>
+
+        <GlobalAuthStyles />
       </ThemeProvider>
-      <GlobalAuthStyles />
     </Main>
   );
 }

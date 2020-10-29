@@ -69,11 +69,8 @@ export default function Login({}) {
     auth.setPersistence(firebaseInstance.auth.Auth.Persistence.LOCAL);
 
     try {
-      const result = await auth.signInWithEmailAndPassword(email, password);
-      console.log(result);
-    } catch (untypedError) {
-      const error = untypedError as import('firebase').auth.Error;
-
+      await auth.signInWithEmailAndPassword(email, password);
+    } catch (error) {
       console.log(error.code);
 
       setLoginError(error.code.replace('auth/', '') as TLoginError);
