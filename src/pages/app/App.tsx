@@ -5,11 +5,12 @@ import { Route, Switch } from 'react-router-dom';
 import { GlobalAuthStyles } from '../../components/auth/auth-global-styles';
 import AuthGuard from '../../components/AuthGuard';
 import { theme } from '../../theme';
-import Login from '../Login';
-import Signup from '../Signup';
 import './App.scss';
 
 interface AppProps {}
+
+const Login = React.lazy(() => import('../Login'));
+const Signup = React.lazy(() => import('../Signup'));
 
 const Main = styled('main')({
   display: 'flex',

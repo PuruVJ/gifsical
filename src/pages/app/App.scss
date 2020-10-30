@@ -6,6 +6,10 @@ body {
   padding: 0;
 }
 
+body {
+  display: flex;
+}
+
 * {
   box-sizing: border-box;
 
@@ -13,5 +17,7 @@ body {
 }
 
 #root {
-  height: 100%;
+  height: inherit !important;
+
+  flex: 1;
 }

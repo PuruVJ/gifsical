@@ -13,11 +13,11 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { Link as RouterLink } from 'react-router-dom';
-import LoginIllustrationSVG from '../assets/art/login.svg';
-import { AuthArea, AuthPage, AuthTextField } from '../components/auth/auth-shared-styles';
-import { PasswordInput } from '../components/password-input';
-import { firebaseInstance } from '../helpers/firebase';
-import { emailRegex } from '../helpers/utils';
+import LoginIllustrationSVG from '@assets/art/login.svg';
+import { AuthArea, AuthPage, AuthTextField } from '@components/auth/auth-shared-styles';
+import { PasswordInput } from '@components/password-input';
+import { firebaseInstance } from '@helpers/firebase';
+import { emailRegex } from '@helpers/utils';
 
 type TLoginError =
   | 'user-not-found'
