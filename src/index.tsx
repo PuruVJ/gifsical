@@ -1,13 +1,15 @@
-import React, { StrictMode } from 'react';
+import React, { StrictMode, Suspense } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './pages/app/App';
 
 render(
   <StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <Suspense fallback={<span></span>}>
+      <Router>
+        <App />
+      </Router>
+    </Suspense>
   </StrictMode>,
   document.getElementById('root'),
 );
