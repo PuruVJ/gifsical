@@ -37,9 +37,7 @@ const loginErrorMap: { [error in TLoginError]: string } = {
 export default function Login({}) {
   const classes = useClasses();
 
-  const { register, handleSubmit, errors } = useForm({
-    mode: 'onBlur',
-  });
+  const { register, handleSubmit, errors } = useForm({});
 
   // Login error
   const [loginError, setLoginError] = useState<TLoginError>('');
@@ -93,6 +91,7 @@ export default function Login({}) {
               label="E-mail address"
               name="email"
               type="email"
+              autoFocus
               required
               className={classes.input}
               inputRef={register({
@@ -108,7 +107,6 @@ export default function Login({}) {
 
             <PasswordInput
               color="secondary"
-              variant="filled"
               label="Password"
               name="password"
               className={`${classes.passwordInput} ${classes.input}`}
@@ -123,7 +121,11 @@ export default function Login({}) {
             </Button>
           </form>
           <br />
-          <Typography align="right">
+          <Typography className={classes.authOptions} align="right">
+            <Link color="secondary" to="/signup" component={RouterLink}>
+              Sign Up
+            </Link>
+            <span style={{ flex: '1 1 auto' }}></span>
             <Link color="secondary" to="/forgot-password" component={RouterLink}>
               Forgot Password
             </Link>
@@ -183,5 +185,9 @@ const useClasses = makeStyles(({ spacing, palette }) => ({
       fill: palette.text.primary,
       color: palette.text.primary,
     },
+  },
+
+  authOptions: {
+    display: 'flex',
   },
 }));

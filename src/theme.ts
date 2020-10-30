@@ -58,9 +58,14 @@ export const theme = createMuiTheme({
       },
     },
     MuiTextField: {
+      defaultProps: {
+        variant: 'outlined',
+      },
       styleOverrides: {
         root: {
-          borderRadius: '0.5rem',
+          '& .MuiOutlinedInput-root': {
+            borderRadius: '0.5rem'
+          },
         },
       },
     },

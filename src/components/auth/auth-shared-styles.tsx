@@ -37,7 +37,7 @@ export const AuthArea = styled('div')(({ theme }) => ({
 
 export const AuthTextField = styled((props: TextFieldProps) => (
   <FormControl>
-    <TextField {...props} color="secondary" variant="filled" />
+    <TextField {...props} color="secondary" />
   </FormControl>
 ))(({ theme }) => ({
   margin: theme.spacing(1, 0, 0, 0),

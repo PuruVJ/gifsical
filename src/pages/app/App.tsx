@@ -1,9 +1,9 @@
+import { GlobalAuthStyles } from '@components/auth/auth-global-styles';
+import AuthGuard from '@components/AuthGuard';
 import { styled, ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Route, Switch } from 'react-router-dom';
-import { GlobalAuthStyles } from '../../components/auth/auth-global-styles';
-import AuthGuard from '../../components/AuthGuard';
 import { theme } from '../../theme';
 import './App.scss';
 

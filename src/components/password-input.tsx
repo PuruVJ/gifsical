@@ -1,9 +1,4 @@
-import {
-  IconButton,
-  InputAdornment,
-  TextField,
-  TextFieldProps,
-} from '@material-ui/core';
+import { IconButton, InputAdornment, TextField, TextFieldProps } from '@material-ui/core';
 import { mdiEye, mdiEyeOff } from '@mdi/js';
 import Icon from '@mdi/react';
 import React, { useRef, useState } from 'react';
@@ -31,10 +26,7 @@ export const PasswordInput = ({ ...rest }: TextFieldProps) => {
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
-            <IconButton
-              aria-label="toggle password visibility"
-              onClick={toggleVisibility}
-            >
+            <IconButton aria-label="toggle password visibility" onClick={toggleVisibility}>
               {visible ? VisibilityOn : VisibilityOff}
             </IconButton>
           </InputAdornment>

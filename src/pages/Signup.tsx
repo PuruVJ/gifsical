@@ -1,5 +1,4 @@
-import { makeStyles } from '@material-ui/core';
-import { AuthArea } from '@components/auth/auth-shared-styles';
+import { makeStyles, TextField, Typography } from '@material-ui/core';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import SignupSVG from '../assets/art/signup.svg';
@@ -14,7 +13,15 @@ export default function Signup({}) {
           <img src={SignupSVG} />
         </section>
 
-        <AuthArea className={classes.authArea}></AuthArea>
+        <section className={classes.authArea}>
+          <div>
+            <Typography variant="h3" color="secondary">
+              Sign Up
+            </Typography>
+            <TextField label="Email" className={classes.textField} color="secondary" />
+            <TextField className={classes.textField} color="secondary" />
+          </div>
+        </section>
       </section>
 
       <Helmet>
@@ -24,7 +31,7 @@ export default function Signup({}) {
   );
 }
 
-const useStyles = makeStyles(({ breakpoints, spacing }) => ({
+const useStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
   root: {
     width: '100%',
 
@@ -33,6 +40,11 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
 
     [breakpoints.down('md')]: {
       flexDirection: 'column',
+      justifyContent: 'initial',
+
+      '& > *': {
+        flex: '0 !important',
+      },
     },
 
     '& > *': {
@@ -40,7 +52,21 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     },
   },
 
-  authArea: {},
+  authArea: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  textField: {
+    margin: spacing(0.5),
+
+    width: spacing(20),
+    maxWidth: '90%',
+
+    caretColor: palette.secondary.main,
+  },
 
   illustration: {
     display: 'flex',
@@ -50,7 +76,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
 
     '& img': {
       maxWidth: '80%',
-      width: spacing(30),
+      width: spacing(25),
     },
   },
 }));
