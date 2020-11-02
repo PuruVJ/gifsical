@@ -3,26 +3,25 @@ import { mdiEye, mdiEyeOff } from '@mdi/js';
 import Icon from '@mdi/react';
 import React, { useRef, useState } from 'react';
 
-// interface IProps {
-// }
-
 export const PasswordInput = ({ ...rest }: TextFieldProps) => {
   const [visible, setVisible] = useState(false);
 
   // Refs
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputContainerRef = useRef<HTMLDivElement>(null);
 
   function toggleVisibility() {
+    const inputEl = inputContainerRef.current?.querySelector('input') as HTMLInputElement;
+
     setVisible(!visible);
 
-    inputRef.current?.focus();
+    inputEl.focus();
   }
 
   return (
     <TextField
-      inputRef={inputRef}
       {...rest}
       type={visible ? 'text' : 'password'}
+      ref={inputContainerRef}
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">

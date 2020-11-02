@@ -21,9 +21,9 @@ const AuthGuard = () => {
     if (!user && !isAuthPage) {
       history.push('/login');
     }
-  }, [user, loading]);
+  }, [user, loading, pathname]);
 
-  return <span />;
+  return <></>;
 };
 
 export default AuthGuard;

@@ -1,5 +1,6 @@
 import { createMuiTheme } from '@material-ui/core';
 import type { TypographyStyleOptions } from '@material-ui/core/styles/createTypography';
+import type {} from '@material-ui/lab/themeAugmentation';
 
 const headingsStyles: TypographyStyleOptions = {
   fontFamily: 'Comfortaa, sans-serif',
@@ -40,7 +41,7 @@ export const theme = createMuiTheme({
       disabled: 'rgba(0, 0, 0, 0.38)',
     },
   },
-  spacing: (factor) => `${factor * 1}rem`,
+  spacing: (factor) => `${factor}rem`,
   typography: {
     h1: headingsStyles,
     h2: headingsStyles,
@@ -49,41 +50,37 @@ export const theme = createMuiTheme({
     h5: headingsStyles,
     h6: headingsStyles,
   },
-  components: {
+  overrides: {
     MuiButton: {
-      styleOverrides: {
-        root: {
+      root: {
+        borderRadius: '0.4rem',
+      },
+    },
+    MuiTextField: {
+      root: {
+        '& .MuiOutlinedInput-root': {
           borderRadius: '0.5rem',
         },
       },
     },
-    MuiTextField: {
-      defaultProps: {
-        variant: 'outlined',
-      },
-      styleOverrides: {
-        root: {
-          '& .MuiOutlinedInput-root': {
-            borderRadius: '0.5rem'
-          },
-        },
-      },
-    },
     MuiAlert: {
-      styleOverrides: {
-        filledError: {
-          color: '#141414',
-          fill: '#141414',
-        },
+      filledError: {
+        color: '#141414',
+        fill: '#141414',
       },
     },
 
     MuiBackdrop: {
-      styleOverrides: {
-        root: {
-          zIndex: 1,
-        },
+      root: {
+        zIndex: 1,
       },
     },
+  },
+
+  props: {
+    MuiTextField: {
+      variant: 'outlined',
+    },
+    MuiLink: {},
   },
 });

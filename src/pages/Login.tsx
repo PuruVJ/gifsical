@@ -1,5 +1,4 @@
 import {
-  Alert,
   Backdrop,
   Button,
   CircularProgress,
@@ -9,15 +8,16 @@ import {
   Snackbar,
   Typography,
 } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { Link as RouterLink } from 'react-router-dom';
-import LoginIllustrationSVG from '@assets/art/login.svg';
-import { AuthArea, AuthPage, AuthTextField } from '@components/auth/auth-shared-styles';
-import { PasswordInput } from '@components/password-input';
-import { firebaseInstance } from '@helpers/firebase';
-import { emailRegex } from '@helpers/utils';
+import LoginIllustrationSVG from '__assets/art/login.svg';
+import { AuthArea, AuthPage, AuthTextField } from '__components/auth/auth-shared-styles';
+import { PasswordInput } from '__components/password-input';
+import { firebaseInstance } from '__helpers/firebase';
+import { emailRegex } from '__helpers/utils';
 
 type TLoginError =
   | 'user-not-found'
@@ -34,10 +34,10 @@ const loginErrorMap: { [error in TLoginError]: string } = {
   'too-many-requests': 'Too many login attempts. Try again in a minute',
 };
 
-export default function Login({}) {
+export default function Login() {
   const classes = useClasses();
 
-  const { register, handleSubmit, errors } = useForm({});
+  const { register, handleSubmit, errors } = useForm();
 
   // Login error
   const [loginError, setLoginError] = useState<TLoginError>('');
@@ -169,7 +169,7 @@ const useClasses = makeStyles(({ spacing, palette }) => ({
 
     display: 'flex',
     flexDirection: 'column',
-    gap: spacing(0.6),
+    gap: spacing(1),
   },
 
   img: {

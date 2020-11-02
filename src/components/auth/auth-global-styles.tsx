@@ -9,7 +9,6 @@ export const GlobalAuthStyles = () => {
   useEffect(() => {
     const isAuthPage = ['/login', '/signup', '/forgot-password'].includes(pathname);
 
-    console.log(palette.background.default);
     document.body.style.backgroundColor = isAuthPage
       ? palette.primary.main
       : palette.background.default;

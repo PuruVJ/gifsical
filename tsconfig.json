@@ -9,10 +9,11 @@
     "baseUrl": "./src",
     /* paths - If you configure Snowpack import aliases, add them here. */
     "paths": {
-      "@assets/*": ["assets/*"],
-      "@components/*": ["components/*"],
-      "@helpers/*": ["helpers/*"],
-      "@constants/*": ["constants/*"]
+      "__assets/*": ["assets/*"],
+      "__components/*": ["components/*"],
+      "__helpers/*": ["helpers/*"],
+      "__constants/*": ["constants/*"],
+      "__theme__": ["./theme.ts"]
     },
     /* noEmit - Snowpack builds (emits) files, not tsc. */
     "noEmit": true,
